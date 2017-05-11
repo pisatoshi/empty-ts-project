@@ -1,0 +1,25 @@
+{
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/dist": true,
+        "**/docs": true,
+        "**/reports": true
+    },
+
+    "lcov.path": "reports/coverage/lcov.info",
+    "lcov.watch": [{
+        "pattern": "**/*.js",
+        "command": "npm run cover"
+    }],
+    "lcov.sourceMaps": false,
+
+    "indentRainbow.colors": [
+        "rgba(164,164,116,0.15)",
+        "rgba(132,164,132,0.15)",
+        "rgba(164,132,164,0.15)",
+        "rgba(116,148,148,0.15)",
+        "rgba(228,132,132,0.01)"
+    ],
+    "indentRainbow.error_color": "rgba(228,132,132,0.01)"
+}

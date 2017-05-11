@@ -1,0 +1,37 @@
+{
+  "name": "intel-logger",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "clean": "rimraf dist reports docs",
+    "lint": "tslint --force src/**/*.ts src/*.ts",
+    "build": "tsc -p .",
+    "test": "mocha --recursive test/**/*.js",
+    "test:report": "mocha --recursive --reporter mochawesome --reporter-options reportDir=reports/unit-test,reportFilename=report test/**/*.js",
+    "cover:istanbul": "istanbul cover --include-all-sources --root dist --dir reports/coverage _mocha -- --recursive test/**/*.js",
+    "cover:remap": "remap-istanbul -i reports/coverage/coverage.raw.json -o reports/coverage -t html",
+    "cover": "npm run cover:istanbul && npm run cover:remap",
+    "doc": "typedoc --out docs src -m commonjs -t ES5",
+    "prebuild": "npm run clean && npm run lint",
+    "postbuild": ""
+  },
+  "author": "wasabi111",
+  "repository": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+  },
+  "devDependencies": {
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^3.2.0",
+    "mochawesome": "^2.0.4",
+    "power-assert": "^1.4.2",
+    "remap-istanbul": "^0.9.5",
+    "rimraf": "^2.6.1",
+    "tslint": "^5.1.0",
+    "typedoc": "^0.5.10",
+    "typescript": "^2.2.2"
+  }
+}
